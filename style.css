@@ -1,37 +1,237 @@
-dy {
-  font-family: Arial, sans-serif;
-  max-width: 600px;
-  margin: 30px auto;
-  padding: 0 15px;
-  background: #f4f4f4;
-  color: #222;
+* {
+  box-sizing: border-box;
 }
-h1 { margin-bottom: 5px; }
-.sub { color: #666; margin-top: 0; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  background: #f3f5f4;
+  color: #1f2933;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+header {
+  background: #2f6f5e;
+  color: white;
+  padding: 28px 0 24px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+header p {
+  margin: 4px 0 0;
+  color: #cfe5de;
+}
+
+main {
+  padding-top: 20px;
+  padding-bottom: 48px;
+}
+
+button {
+  font-family: inherit;
+  font-size: 15px;
+  padding: 8px 14px;
+  border: 1px solid #c8d1cd;
+  border-radius: 6px;
+  background: white;
+  color: #1f2933;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #eef2f0;
+}
+
+button.primary {
+  background: #2f6f5e;
+  border-color: #2f6f5e;
+  color: white;
+}
+
+button.primary:hover {
+  background: #265a4c;
+}
+
+button.link {
+  border: none;
+  background: none;
+  padding: 0;
+  font-size: 13px;
+  color: #2f6f5e;
+  text-decoration: underline;
+}
+
 .datebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.datetext {
+  text-align: center;
+}
+
+.datetext strong {
+  display: block;
+  font-size: 18px;
+}
+
+.summary {
+  background: white;
+  border: 1px solid #dde3e0;
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+}
+
+.summary p {
+  margin: 0 0 8px;
+}
+
+.bar {
+  height: 8px;
+  background: #e3e8e5;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.bar div {
+  height: 100%;
+  width: 0;
+  background: #3f9a7f;
+  transition: width 0.2s;
+}
+
+.card,
+.habit {
+  background: white;
+  border: 1px solid #dde3e0;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.card h2 {
+  margin: 0 0 12px;
+  font-size: 18px;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.hint {
+  font-weight: normal;
+  color: #6b7a74;
+}
+
+input[type="text"] {
+  width: 100%;
+  font-family: inherit;
+  font-size: 15px;
+  padding: 9px 10px;
+  margin-bottom: 14px;
+  border: 1px solid #c8d1cd;
+  border-radius: 6px;
+}
+
+input[type="text"]:focus,
+button:focus-visible {
+  outline: 2px solid #3f9a7f;
+  outline-offset: 1px;
+}
+
+.habit {
+  border-left: 5px solid #c8d1cd;
+}
+
+.habit.done {
+  border-left-color: #3f9a7f;
+  background: #f4faf7;
+}
+
+.habit-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 20px 0;
+  gap: 12px;
 }
-.add, .habit {
-  background: white;
-  border: 1px solid #ccc;
-  padding: 12px;
+
+.habit-top h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.delete {
+  font-size: 13px;
+  padding: 4px 10px;
+  color: #b3392f;
+  border-color: #e3c3bf;
+}
+
+.delete:hover {
+  background: #fbeeec;
+}
+
+.meta {
+  margin: 4px 0 10px;
+  font-size: 13px;
+  color: #6b7a74;
+}
+
+.habit .bar {
   margin-bottom: 12px;
 }
-.add input[type=text] {
-  width: 100%;
-  padding: 6px;
-  margin: 4px 0 10px;
-  box-sizing: border-box;
+
+.checkpoint {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+  font-weight: normal;
+  font-size: 16px;
+  cursor: pointer;
 }
-.habit-head { display: flex; justify-content: space-between; }
-.habit h2 { font-size: 18px; margin: 0; }
-.habit.done h2 { text-decoration: line-through; color: #777; }
-.meta { font-size: 13px; color: #666; }
-.bar { height: 6px; background: #ddd; margin-bottom: 10px; }
-.bar div { height: 100%; background: green; }
-.cp { display: block; padding: 3px 0; }
-.empty { color: #666; }
- 
+
+.checkpoint input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: #2f6f5e;
+}
+
+.checkpoint.checked span {
+  text-decoration: line-through;
+  color: #8a9892;
+}
+
+.empty {
+  text-align: center;
+  color: #6b7a74;
+  padding: 20px 0;
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 24px;
+  }
+
+  .datetext strong {
+    font-size: 16px;
+  }
+}

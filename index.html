@@ -7,27 +7,43 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="wrap">
-  <h1>Habit Tracker</h1>
-  <p class="sub">Add your habits, break them into checkpoints, and tick them off each day.</p>
- 
-  <div class="datebar">
-    <button id="prev">Previous day</button>
-    <span id="dateLabel"></span>
-    <button id="next">Next day</button>
+
+<header>
+  <div class="container">
+    <h1>Habit Tracker</h1>
+    <p>Build good habits one checkpoint at a time.</p>
   </div>
- 
-  <div class="add">
+</header>
+
+<main class="container">
+
+  <section class="datebar">
+    <button id="prev" title="Previous day">&larr;</button>
+    <div class="datetext">
+      <strong id="dateLabel"></strong>
+      <button id="todayBtn" class="link">Go to today</button>
+    </div>
+    <button id="next" title="Next day">&rarr;</button>
+  </section>
+
+  <section class="summary">
+    <p id="summaryText"></p>
+    <div class="bar"><div id="summaryFill"></div></div>
+  </section>
+
+  <section class="card">
+    <h2>New habit</h2>
     <label for="name">Habit name</label>
-    <input type="text" id="name" placeholder="For example: Morning routine">
-    <label for="cps">Checkpoints (separate with commas)</label>
-    <input type="text" id="cps" placeholder="For example: Wake up by 7, Drink water, Stretch">
-    <button id="addBtn">Add habit</button>
-  </div>
- 
-  <div id="list"></div>
-</div>
- 
+    <input type="text" id="name" placeholder="Morning routine">
+    <label for="cps">Checkpoints <span class="hint">(separate with commas)</span></label>
+    <input type="text" id="cps" placeholder="Wake up by 7, Drink water, Stretch">
+    <button id="addBtn" class="primary">Add habit</button>
+  </section>
+
+  <section id="list"></section>
+
+</main>
+
 <script src="script.js"></script>
 </body>
 </html>
