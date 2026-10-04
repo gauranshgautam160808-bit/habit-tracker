@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Habit Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <h1>Habit Tracker</h1>
+  <p class="sub">Add your habits, break them into checkpoints, and tick them off each day.</p>
+ 
+  <div class="datebar">
+    <button id="prev">Previous day</button>
+    <span id="dateLabel"></span>
+    <button id="next">Next day</button>
+  </div>
+ 
+  <div class="add">
+    <label for="name">Habit name</label>
+    <input type="text" id="name" placeholder="For example: Morning routine">
+    <label for="cps">Checkpoints (separate with commas)</label>
+    <input type="text" id="cps" placeholder="For example: Wake up by 7, Drink water, Stretch">
+    <button id="addBtn">Add habit</button>
+  </div>
+ 
+  <div id="list"></div>
+</div>
+ 
+<script src="script.js"></script>
+</body>
+</html>
